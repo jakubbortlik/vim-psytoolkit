@@ -14,7 +14,7 @@ syntax case match
 
 " Arguments to form (Manual, section 6.1)
 
-syntax keyword psyType bitmap text progress
+syntax keyword psyType bitmap text progress mouse
 
 " Loops and conditionals
 
@@ -23,18 +23,21 @@ syntax keyword psyRepeat while-end while
 
 " Statements
 
-syntax keyword psyStatement clear silence sound show set save delay hide readmouse increase
+syntax keyword psyStatement clear silence sound show set save delay hide
+syntax keyword psyStatement readmouse increase message timestamp
 
 " Environments
 
-syntax keyword psyDefine table part block task blockorder bitmaps sounds fonts options
+syntax keyword psyDefine table part block task blockorder bitmaps sounds fonts
+syntax keyword psyDefine options tasklist end
 syntax keyword psyPrecondit include
 
 syntax keyword psyFunction range bitmap-under-mouse expression
 
 " Attributes of objects
 
-syntax keyword psyAttribute MOUSE_X MOUSE_Y RT BLOCKORDER BLOCKNAME BLOCKS BLOCKORDERS TRIALCOUNT
+syntax keyword psyAttribute MOUSE_X MOUSE_Y RT BLOCKORDER BLOCKNAME BLOCKS
+syntax keyword psyAttribute BLOCKORDERS TRIALCOUNT
 
 " syntax keyword psyObject ArtWord BarkFilter CC Cepstrum Cochleagram
 
