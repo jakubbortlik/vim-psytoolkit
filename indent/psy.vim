@@ -13,30 +13,30 @@ if exists("b:did_indent")
 endif
 let b:did_indent = 1
 
-setlocal indentexpr=GetPsytoolkitIndent()
+setlocal indentexpr=GetPsyIndent()
 setlocal indentkeys+==end
 setlocal indentkeys+==fi,=while-end
 
 let b:undo_indent = "setl indentkeys< indentexpr<"
 
 " Only define the function once.
-if exists("*GetPsytoolkitIndent")
+if exists("*GetPsyIndent")
   finish
 endif
 let s:keepcpo= &cpo
 set cpo&vim
 
-function GetPsytoolkitIndent()
+function GetPsyIndent()
   let ignorecase_save = &ignorecase
   try
     let &ignorecase = 0
-    return GetPsytoolkitIndentIntern()
+    return GetPsyIndentIntern()
   finally
     let &ignorecase = ignorecase_save
   endtry
 endfunc
 
-function GetPsytoolkitIndentIntern()
+function GetPsyIndentIntern()
   " Find a non-blank line above the current line.
   let lnum = prevnonblank(v:lnum - 1)
 
