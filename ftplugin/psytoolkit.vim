@@ -26,3 +26,6 @@ endif
 
 " Set the foldmethod
 setlocal foldmethod=indent
+
+" Set the shiftwidth and tabstop to 2, replace tabs with spaces
+setlocal sw=2 ts=2 expandtab
