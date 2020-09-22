@@ -24,7 +24,7 @@ syntax keyword psyRepeat while-end while
 " Statements
 
 syntax keyword psyStatement clear silence sound show set save delay hide
-syntax keyword psyStatement readmouse increase message timestamp
+syntax keyword psyStatement readmouse increase message timestamp timestamp-diff
 
 " Environments
 
@@ -49,7 +49,7 @@ syntax match psyTag "@\(_\|\a\)\+:\?"
 " syntax match psyCommand "\(Record mono sound\(:\)\@=\)"
 
 " Variables
-syntax match psyVar "\$\l\w*" "&\l\w*"
+syntax match psyVar "\(\$\|&\)\a\w*"
 
 " String Assignment
 syntax region psyString start=+"+ skip=+\\+  end=+"+

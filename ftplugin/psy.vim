@@ -9,7 +9,7 @@ endif
 let b:did_psyftp = 1
 
 " Add matchit.vim support:
-let b:match_words='\<if\>:\<fi\>,\<while\>:\<while-end\>,\<tasklist\>:\<end\>'
+let b:match_words='\<if\>:\<fi\>,\<while\>\(-\)\@!:\<while-end\>,\<tasklist\>:\<end\>'
 
 " Comments start with a hash
 setlocal commentstring=#%s
@@ -18,6 +18,9 @@ setlocal commentstring=#%s
 " insert the comment leader when hitting <CR> or using "o",
 " and remove a comment leader when joining lines.
 setlocal fo-=t fo+=croqlj
+
+" Enable keywords with the dash, such as "while-end"
+setlocal iskeyword+=-
 
 " Format comments to be up to 80 characters long
 if &tw == 0
